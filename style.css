@@ -1,0 +1,119 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --container-color:rgb(12, 15, 22);
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background:radial-gradient(circle, rgb(0, 39, 58) 0%, rgba(18,28,34,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    height: 650px;
+    width: 400px;
+    border-radius: 15px;
+    background-color: var(--container-color);
+    
+}
+.screen{
+    width: 100%;
+    height: 250px;
+
+}
+.btns{
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "sq op"
+                         "rem op";
+    place-content: center;
+
+}
+.btn{
+    width: auto;
+    height: auto;
+    background-color: lightseagreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border: none;
+}
+.sq{
+    grid-area: sq;
+    display: grid;
+    grid-template-columns: repeat(3,min(60px));
+    grid-template-rows: repeat(4,min(60px));
+    gap: 1rem;
+    place-content: center;
+}
+.op{
+    grid-area: op;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: repeat(2,min(60px)) repeat(2,98px);
+    grid-template-columns: 60px;
+    padding-left: 1rem;
+}
+.rem{
+    grid-area: rem;
+    display: grid;
+    grid-template-columns: 138px min(60px);
+    grid-template-rows: min(60px);
+    gap: 1rem;
+    padding-top: 1rem;
+}
+.btn{
+    background-color:rgb(39, 42, 50);
+    color: rgb(26, 92, 225);
+    transition: 500ms;
+}
+.btn:is(:hover){
+    filter: brightness(150%);
+}
+.btn:active{
+    transform: scale(1.1);
+}
+.grey{
+    background-color: grey;
+    color: rgb(177, 177, 177);
+}
+.blue{
+    background-color: rgb(26, 92, 225);
+    color: rgb(76, 210, 255);
+}
+.light-blue{
+    background-color: rgb(57, 206, 255);
+    color: rgb(255, 255, 255);
+}
+.screen{
+    color: white;
+    font-weight: 800;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 2.2rem;
+    padding: .5rem 2rem 2rem .5rem ;
+}
+.error{
+    color:red;
+    animation: shake .5s infinite;
+}
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+  }
